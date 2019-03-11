@@ -1,11 +1,18 @@
 #ifndef __treeNode__
 #define __treeNode__
 
+#include <stdbool.h>
+
 typedef struct tree_node_struct {
 	struct tree_node_struct *left, *right;
 	int val;
-} treeNode;
+} TreeNode;
 
-treeNode* newNode(int val, treeNode* left, treeNode* right);
+enum tree_order{PreOrder, InOrder, PostOrder};
+
+TreeNode* newNode(int val);
+TreeNode* searchNode(TreeNode* node, int target);
+void printOrder(TreeNode* node, enum tree_order order);
+int heightNode(TreeNode* node);
 
 #endif

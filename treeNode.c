@@ -1,11 +1,39 @@
 #include <stdlib.h>
+#include <stdio.h>
 
-#include "treeNode.h"
+#include "TreeNode.h"
 
-treeNode* newNode(int val, treeNode* left, treeNode* right){
-	treeNode* ret = malloc(sizeof(treeNode));
+TreeNode* newNode(int val){
+	TreeNode* ret = malloc(sizeof(TreeNode));
 	ret->val = val;
-	ret->left = left;
-	ret->right = right;
 	return ret;
+}
+
+TreeNode* searchNode(TreeNode* node, int target){
+	// TODO
+}
+
+static void printOrder_(enum tree_order targOrder, TreeNode* node, enum tree_order order){
+	if(order == targOrder){
+		printf("%d ", node->val);
+	}
+}
+
+void printOrder(TreeNode* node, enum tree_order order){
+	printOrder_(PreOrder, node, order);
+	printOrder(node, order);
+	printOrder_(InOrder, node, order);
+	printOrder(node, order);
+	printOrder_(PostOrder, node, order);
+}
+
+static int mx(int a, int b){
+	return a<b ? b : a;
+}
+
+int heightNode(TreeNode* node){
+	if(node == NULL){
+		return 0;
+	}
+	return 1 + mx(heightNode(node->left), heightNode(node->right));
 }
