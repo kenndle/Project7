@@ -20,10 +20,13 @@ static void printOrder_(enum tree_order targOrder, TreeNode* node, enum tree_ord
 }
 
 void printOrder(TreeNode* node, enum tree_order order){
+	if(node == NULL){
+		return;
+	}
 	printOrder_(PreOrder, node, order);
-	printOrder(node, order);
+	printOrder(node->left, order);
 	printOrder_(InOrder, node, order);
-	printOrder(node, order);
+	printOrder(node->right, order);
 	printOrder_(PostOrder, node, order);
 }
 
