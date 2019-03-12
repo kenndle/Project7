@@ -32,7 +32,8 @@ void printpostorder(binary_tree* bt){
 }
 
 int btsize(binary_tree* bt){
-
+  return bt->treeElements;
+  
 }
 
 int treeheight(binary_tree* bt){
