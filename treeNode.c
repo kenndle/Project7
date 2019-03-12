@@ -10,7 +10,23 @@ TreeNode* newNode(int val){
 }
 
 TreeNode* searchNode(TreeNode* node, int target){
-	//TODO
+target = node->val;
+    while(node != NULL)
+    {
+        if (target == node->val)
+        {
+            return node;
+        }
+        else if(target < node->val)
+        {
+           node = node->left;
+        }
+        else
+        {
+            node = node->right;
+        }
+    }
+    return NULL;
 }
 
 //helper function that prints if targOrder is equal to order
