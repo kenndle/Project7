@@ -30,5 +30,5 @@ int btsize(binary_tree* bt){
 }
 
 int treeheight(binary_tree* bt){
-
+  heightNode(bt->root);
 }
