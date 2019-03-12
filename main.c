@@ -1,26 +1,35 @@
 #include "binarytree.h"
-#include "treeNode.h"
+
+#include <stdbool.h>
 
 int main(int argc, char* argv[]) {
    FILE* inFile = NULL;
-
+	int i;
+	bool found;
+	
+	binary_tree bt;
+	
+	initialize(&bt);
+	
    printf("argc: %d\n", argc);
    for (i = 0; i < argc; ++i) {
      printf("argv[%d]: %s\n", i, argv[i]);
    }
 
    if (argc < 2) {
-      printf("Could not open file\n");
+      fprintf(stderr,"Usage: %s input_file\n", argv[0]);
       return -1; // -1 indicates error
    }
 
    inFile = fopen(argv[1], "r");
 
    if (inFile == NULL) {
-      printf("Could not open file myfile.txt.\n");
-      return -1; // -1 indicates error
+      fprintf(stderr, "Could not open file %s.\n", argv[1]);
+      return -2; // -1 indicates error
    }
 
+	//TODO: Populate tree
+	
    printf("Print in order\n");
    printinorder(&bt);
    printf("\nPrint pre order\n");

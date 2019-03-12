@@ -5,8 +5,8 @@
 #include "binarytree.h"
 
 void initialize(binary_tree* bt) {
-  s->root = NULL;
-  s->treeElements = 0;
+  bt->root = NULL;
+  bt->treeElements = 0;
 }
 bool search(binary_tree* bt, int key){
 
@@ -24,6 +24,7 @@ void printpostorder(binary_tree* bt){
 
 }
 int btsize(binary_tree* bt){
+	
 }
 int treeheight(binary_tree* bt){
 
