@@ -10,11 +10,7 @@ TreeNode* newNode(int val){
 }
 
 TreeNode* searchNode(TreeNode* node, int target){
-	if(node == NULL || node->val == target) return node;
-	if(node->val > target){
-		
-	}
-	
+	//TODO
 }
 
 static void printOrder_(enum tree_order targOrder, TreeNode* node, enum tree_order order){
