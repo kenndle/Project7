@@ -1,4 +1,4 @@
-myprog.exe : main.o binarytree.o treeNode.o
+binarytree.exe : main.o binarytree.o treeNode.o
     gcc main.o binarytree.o treeNode.o -o binarytree.exe
 
 main.o : main.c binarytree.h
