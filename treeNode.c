@@ -13,21 +13,22 @@ TreeNode* searchNode(TreeNode* node, int target){
 	//TODO
 }
 
+//helper function that prints if targOrder is equal to order
 static void printOrder_(enum tree_order targOrder, TreeNode* node, enum tree_order order){
 	if(order == targOrder){
 		printf("%d ", node->val);
-	}
+	} 
 }
 
 void printOrder(TreeNode* node, enum tree_order order){
 	if(node == NULL){
 		return;
 	}
-	printOrder_(PreOrder, node, order);
+	printOrder_(PreOrder, node, order); //only prints if order is PreOrder and is called through enum tree_order order
 	printOrder(node->left, order);
-	printOrder_(InOrder, node, order);
+	printOrder_(InOrder, node, order); //only prints if order is InOrder and is called through enum tree_order order
 	printOrder(node->right, order);
-	printOrder_(PostOrder, node, order);
+	printOrder_(PostOrder, node, order); //only prints if order is PostOrder and is called through enum tree_order order
 }
 
 static int mx(int a, int b){
