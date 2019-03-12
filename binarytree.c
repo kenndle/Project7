@@ -5,25 +5,31 @@
 #include "binarytree.h"
 
 void initialize(binary_tree* bt) {
-  s->root = NULL;
-  s->treeElements = 0;
+  bt->root = NULL;
+  bt->treeElements = 0;
 }
+
 bool search(binary_tree* bt, int key){
 
 }
+
 void insert(binary_tree* bt, int item){
 
 
 
 }
+
 void printinorder(binary_tree* bt) {
   printOrder(bt->root, InOrder);
 }
+
 void printpreorder(binary_tree* bt){
   printOrder(bt->root, PreOrder);
 }
+
 void printpostorder(binary_tree* bt){
   printOrder(bt->root, PostOrder);
+}
 
 int btsize(binary_tree* bt){
 
