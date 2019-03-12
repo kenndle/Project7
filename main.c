@@ -1,3 +1,5 @@
+#include "binarytree.h"
+#include "treeNode.h"
 
 int main(int argc, char* argv[]) {
    FILE* inFile = NULL;
