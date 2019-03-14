@@ -7,7 +7,7 @@ int main(int argc, char* argv[]) {
    int i;
    bool found;
    binary_tree bt;
-   int Num;
+   int num;
 	
    initialize(&bt);
 
