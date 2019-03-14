@@ -4,17 +4,12 @@
 
 int main(int argc, char* argv[]) {
    FILE* inFile = NULL;
-	int i;
-	bool found;
+   int i;
+   bool found;
+   binary_tree bt;
+   int Num;
 	
-	binary_tree bt;
-	
-	initialize(&bt);
-	
-   printf("argc: %d\n", argc);
-   for (i = 0; i < argc; ++i) {
-     printf("argv[%d]: %s\n", i, argv[i]);
-   }
+   initialize(&bt);
 
    if (argc < 2) {
       fprintf(stderr,"Usage: %s input_file\n", argv[0]);
@@ -25,10 +20,14 @@ int main(int argc, char* argv[]) {
 
    if (inFile == NULL) {
       fprintf(stderr, "Could not open file %s.\n", argv[1]);
-      return -2; // -1 indicates error
+      return -1; // -1 indicates error
    }
-
-	//TODO: Populate tree
+ 
+ //Add numbers to tree?
+   num = 0;
+   while (!feof(inFile)) {
+	insert(&bt, num);
+	}
 	
    printf("Print in order\n");
    printinorder(&bt);
