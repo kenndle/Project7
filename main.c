@@ -23,9 +23,9 @@ int main(int argc, char* argv[]) {
 		return -1; // -1 indicates error
 	}
  
-	//Add numbers to tree
-	num = 0;
-	while (fscanf(inFile, "%d", &num) == 1) {
+	//Add numbers to tree?
+	while (!feof(inFile)) {
+		fscanf(inFile, "%d", &num); //read in other number inputs
 		insert(&bt, num);
 	}
 	
