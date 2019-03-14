@@ -48,6 +48,7 @@ void insert(binary_tree* bt, int key){
 	TreeNode** link = searchLink(bt, key, &found);
 	if(!found){
 		*link = newNode(key);
+		bt->treeElements++;
 	}
 }
 
