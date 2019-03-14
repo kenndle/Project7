@@ -24,9 +24,9 @@ int main(int argc, char* argv[]) {
    }
  
  //Add numbers to tree?
-   num = 0;
    while (!feof(inFile)) {
-	insert(&bt, num);
+	   fscanf(inFile, "%d", &num); //read in other number inputs
+	   insert(&bt, num);	
 	}
 	
    printf("Print in order\n");
