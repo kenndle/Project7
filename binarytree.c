@@ -10,7 +10,7 @@ void initialize(binary_tree* bt) {
 }
 
 bool search(binary_tree* bt, int key){
-  searchNode(bt->root, key?);
+  searchNode(bt->root, key);
 }
 
 void insert(binary_tree* bt, int item){
