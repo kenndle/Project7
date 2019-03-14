@@ -4,7 +4,6 @@
 
 int main(int argc, char* argv[]) {
 	FILE* inFile = NULL;
-	int i;
 	bool found;
 	binary_tree bt;
 	int num;
