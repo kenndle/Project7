@@ -52,7 +52,7 @@ static int mx(int a, int b){
 
 int heightNode(TreeNode* node){
 	if(node == NULL){
-		return 0;
+		return -1;
 	}
 	return 1 + mx(heightNode(node->left), heightNode(node->right));
 }
