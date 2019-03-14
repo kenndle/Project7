@@ -9,14 +9,46 @@ void initialize(binary_tree* bt) {
   bt->treeElements = 0;
 }
 
-bool search(binary_tree* bt, int key){
-  searchNode(bt->root, key?);
+// Used to implement search and insert, not visible outside this file
+static TreeNode** searchLink(binary_tree* bt, int key, bool* foundExact){
+	TreeNode** link = &bt->root;  // -> goes first
+	while(*link != NULL)
+    {
+		TreeNode* node = *link;
+        if (key == node->val)
+        {
+			if(foundExact != NULL){
+				*foundExact = true;
+			}
+            return link;
+        }
+        else if(key < node->val)
+        {
+           link = &node->left;
+        }
+        else
+        {
+           link = &node->right;
+        }
+    }
+	if(foundExact != NULL){
+		*foundExact = false;
+	}
+    return link;
 }
 
-void insert(binary_tree* bt, int item){
+bool search(binary_tree* bt, int key){
+  bool found;
+  searchLink(bt, key, &found);
+  return found;
+}
 
-
-
+void insert(binary_tree* bt, int key){
+	bool found;
+	TreeNode** link = searchLink(bt, key, &found);
+	if(!found){
+		*link = newNode(key);
+	}
 }
 
 void printinorder(binary_tree* bt) {
@@ -37,5 +69,5 @@ int btsize(binary_tree* bt){
 }
 
 int treeheight(binary_tree* bt){
-  heightNode(bt->root);
+  return heightNode(bt->root);
 }

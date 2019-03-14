@@ -9,8 +9,7 @@ TreeNode* newNode(int val){
 	return ret;
 }
 
-TreeNode* searchNode(TreeNode* node, int target){
-target = node->val;
+/*TreeNode* searchNode(TreeNode* node, int target){
     while(node != NULL)
     {
         if (target == node->val)
@@ -27,7 +26,7 @@ target = node->val;
         }
     }
     return NULL;
-}
+}*/
 
 //helper function that prints if targOrder is equal to order
 static void printOrder_(enum tree_order targOrder, TreeNode* node, enum tree_order order){
