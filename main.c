@@ -10,7 +10,7 @@ int main(int argc, char* argv[]) {
 	
 	initialize(&bt);
 	
-	if (argc < 2) {
+	if (argc != 2) {
 		fprintf(stderr,"Usage: %s input_file\n", argv[0]);
 		return -1; // -1 indicates error
 	}
