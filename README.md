@@ -3,6 +3,7 @@
 Kenndle Sierer,
 Cyrus Kirkeby,
 Jason Haroldson,
+Ethan Peace
 
 Project 7 is creating a binary search tree, where integers will be inserted according to their value.
 Our group will have a binarytree.h file which will contain the sturct with an integer and a pointer to the root of the tree. I twill also contain all the function declarations for the rest of the project. 
